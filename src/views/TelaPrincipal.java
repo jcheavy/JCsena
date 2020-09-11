@@ -11,7 +11,10 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 
+import controllers.ResultadoController;
 import entities.Resultado;
 import util.Utils;
 
@@ -24,6 +27,7 @@ public class TelaPrincipal extends JFrame {
 	private Date datasql;
 	
 	private JButton btsalvar;
+	private JButton teste;
 	
 	private JLabel lbola1;
 	private JLabel lbola2;
@@ -169,23 +173,108 @@ public class TelaPrincipal extends JFrame {
 		telaPrincipal.add(btsalvar);
 		
 		btsalvar.addActionListener(e ->{
-			try {
-				salvar();
-			} catch (ParseException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+		  ResultadoController controller = new ResultadoController(this);
+		  try {
+			controller.salvar();
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		});
+		
+		teste = new JButton("01");
+		teste.setBounds(600,85,50,50);
+		telaPrincipal.add(teste);
 			
 
 		setVisible(true);
 
 	}
 
-	public static void main(String[] args) {
+	public JTextField getTfbola1() {
+		return tfbola1;
+	}
 
-		TelaPrincipal telap = new TelaPrincipal();
-		telap.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	public void setTfbola1(JTextField tfbola1) {
+		this.tfbola1 = tfbola1;
+	}
+
+	public JTextField getTfbola2() {
+		return tfbola2;
+	}
+
+	public void setTfbola2(JTextField tfbola2) {
+		this.tfbola2 = tfbola2;
+	}
+
+	public JTextField getTfbola3() {
+		return tfbola3;
+	}
+
+	public void setTfbola3(JTextField tfbola3) {
+		this.tfbola3 = tfbola3;
+	}
+
+	public JTextField getTfbola4() {
+		return tfbola4;
+	}
+
+	public void setTfbola4(JTextField tfbola4) {
+		this.tfbola4 = tfbola4;
+	}
+
+	public JTextField getTfbola5() {
+		return tfbola5;
+	}
+
+	public void setTfbola5(JTextField tfbola5) {
+		this.tfbola5 = tfbola5;
+	}
+
+	public JTextField getTfbola6() {
+		return tfbola6;
+	}
+
+	public void setTfbola6(JTextField tfbola6) {
+		this.tfbola6 = tfbola6;
+	}
+
+	public JTextField getTfconcurso() {
+		return tfconcurso;
+	}
+
+	public void setTfconcurso(JTextField tfconcurso) {
+		this.tfconcurso = tfconcurso;
+	}
+
+	public JTextField getTfdataconcurso() {
+		return tfdataconcurso;
+	}
+
+	public void setTfdataconcurso(JTextField tfdataconcurso) {
+		this.tfdataconcurso = tfdataconcurso;
+	}
+
+	public static void main(String[] args) {
+ 
+	//	TelaPrincipal telap = new TelaPrincipal();
+	//	telap.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		  // set look and feel to the system look and feel
+		
+		
+	       try {
+	           UIManager.setLookAndFeel("com.jtattoo.plaf.aluminium.AluminiumLookAndFeel");
+	       } catch (Exception ex) {
+	           ex.printStackTrace();
+	       }
+	        
+	       SwingUtilities.invokeLater(new Runnable() {
+	           @Override
+	           public void run() {
+	               new TelaPrincipal().setVisible(true);
+	           }
+	       });
 	}
 
 }
