@@ -22,7 +22,6 @@ import com.jtattoo.plaf.aluminium.AluminiumLookAndFeel;
 
 import controllers.ResultadoController;
 import entities.Resultado;
-import services.ResultadoService;
 import util.Comp;
 import util.Utils;
 
@@ -55,8 +54,7 @@ public class TelaPrincipal extends JFrame {
 	private JTextField tfconcurso;
 	private JFormattedTextField tfdataconcurso;
 	private MaskFormatter mask;
-
-	private ResultadoService resulService;
+	
 
 	Font fonte1 = new Font("Taoma", Font.PLAIN, 14);
 	Font font2 = new Font("Jokerman", Font.PLAIN, 20);
@@ -310,7 +308,7 @@ public class TelaPrincipal extends JFrame {
 			return false;
 		} else
 
-		if (tfdataconcurso.getText().trim().length() < 10) {
+		if (tfdataconcurso.getText().trim().length() < 9) {
 			JOptionPane.showMessageDialog(null, "Por favor, informar campo Data", "Informação",
 					JOptionPane.INFORMATION_MESSAGE);
 			tfdataconcurso.requestFocus();
