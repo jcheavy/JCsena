@@ -32,10 +32,12 @@ public class ResultadoController {
 		Resultado resultadocontrol = new Resultado(null, concurso, dataConcurso, bola1, bola2, bola3, bola4, bola5, bola6);
 		
 		resuldao = new ResultadoDAO();
-		resuldao.save(resultadocontrol);
-		 
+	    resuldao.save(resultadocontrol);
+	    telaPrincipal.limpar();
+	    
 		}
-	
+	    
+	 
 	
 
 }

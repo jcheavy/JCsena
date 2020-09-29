@@ -65,7 +65,7 @@ public class ResultadoDAO {
 			em.clear();
 		}
 	 return resultado;
-	}
+	}	
 	
 	public List<Resultado> findAll(){
 		
@@ -99,14 +99,5 @@ public class ResultadoDAO {
 			em.close();
 		}
 	 return resultado;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	}	
 }
